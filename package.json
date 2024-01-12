@@ -1,0 +1,23 @@
+{
+  "name": "dikshawebsite",
+  "version": "1.0.0",
+  "description": "A comprehensive website for students who want to learn java full stack, python full stack, data science, business intelligence and many more technologies.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "full-stack",
+    "java",
+    "python",
+    "data-science",
+    "business-intelligence",
+    "web-development",
+    "education"
+  ],
+  "author": "Nitesh Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
