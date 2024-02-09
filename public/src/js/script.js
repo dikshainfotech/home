@@ -2,9 +2,9 @@
 let allCourses = document.querySelectorAll(".course-card");
 
 allCourses.forEach((course) => {
-    let courseName = course.querySelector(".card-title").innerText;
-    let linkOfCourse = course.querySelector(".join-link");
-    let prototype = `<section class="h-100 bg-light">
+  let courseName = course.querySelector(".card-title").innerText;
+  let linkOfCourse = course.querySelector(".join-link");
+  let prototype = `<section class="h-100 bg-light">
     <div class="close-btn">close</div>
 <div class="container py-5 h-100">
   <div class="row d-flex justify-content-center align-items-center h-100">
@@ -129,18 +129,44 @@ allCourses.forEach((course) => {
 </div>
 </section>`;
 
-let div=document.createElement("div");
-div.className="course-form";
-    div.innerHTML=prototype;
-    linkOfCourse.addEventListener("click", (e) => {
-        let body=document.querySelector("body");
-        body.appendChild(div);
-    })
+  let div = document.createElement("div");
+  div.className = "course-form";
+  div.innerHTML = prototype;
+  linkOfCourse.addEventListener("click", (e) => {
+    let body = document.querySelector("body");
+    body.appendChild(div);
+  })
 
-    let closeBtn=div.querySelector(".close-btn");
+  let closeBtn = div.querySelector(".close-btn");
 
-    closeBtn.addEventListener("click", (e)=>{
-        div.style.display="none";
-    })
+  closeBtn.addEventListener("click", (e) => {
+    div.style.display = "none";
+  })
 })
+
+
+const elements = document.querySelectorAll('.element');
+
+const options = {
+  root: null, // Use viewport as root
+  threshold: 0.5, // Trigger at 50% visibility
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+    else {
+      // Optionally remove the class when no longer in view
+      entry.target.classList.remove('in-view');
+    }
+  });
+}, options);
+
+elements.forEach((element) => {
+  observer.observe(element);
+});
+
+//sending data to mail 
 

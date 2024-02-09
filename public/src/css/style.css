@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}    
+}
 
 .logo>* {
     height: 50%;
@@ -111,7 +111,7 @@
 }
 
 .carousel-image {
-    height: 60vh;
+    height: 90vh;
 }
 
 .whatsapp-msg {
@@ -183,7 +183,7 @@
     overflow: auto;
 }
 
-.close-btn{
+.close-btn {
     position: absolute;
     padding: 10px;
     right: 10%;
@@ -191,29 +191,86 @@
     user-select: none;
 }
 
-.press-enter{
+.press-enter {
     display: block;
     margin: 2px;
 }
 
-p{
+p {
     text-align: justify;
 }
 
-.carousel-caption{
+.carousel-caption {
     text-align: left;
 }
 
-@media screen and (max-width: 991px) {
-    .container-fluid{
+.element {
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Initially moved up */
+    transition: all 0.5s ease-in-out;
+    /* Smooth transition */
+}
+
+
+.element.in-view {
+    opacity: 1;
+    /* Make it visible */
+    transform: translateY(0);
+    /* Bring it back to position */
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .element {
+        opacity: 0;
+        /* Initially hidden */
+        transform: translateY(50px);
+        /* Initially moved up */
+        transition: all 0.5s ease-in-out;
+        /* Smooth transition */
+    }
+    .call-tag{
+        width: 50%;
+    }
+
+    .element.in-view {
+        opacity: 1;
+        /* Make it visible */
+        transform: translateY(0);
+        /* Bring it back to position */
+    }
+
+    .container-fluid {
         background-color: rgb(231, 218, 218);
     }
 
-    .update-bar{
+    .update-bar {
         margin-top: 12em;
     }
-
+    .logo{
+        width: 40%;
+        height: 80%;
+    }
+    .logo>*{
+        border-radius: 10px;
+    }
+    .container-fluid{
+        height: 10em;
+    }
     .carousel-image {
         height: 30vh;
+    }
+
+    .option-cont-show{
+        background-color: rgb(231, 218, 218);
+        padding: 10px;
+        position: absolute;
+        width: 70%;
+        border-bottom-right-radius: 10px;
+        left: 0;
+        top: 10em;
     }
 }
